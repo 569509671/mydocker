@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "V04+Ne7XB5eLnyvEahZxnahWGgKhFKgTP6RtML704o3vVdx4W5N3ov+Xffs/4ZlJZFEYNTQ+oZRS2rEx4LqlkQ==",
+  "success": true,
+  "projectFilePath": "D:\\WorkSpace\\MySmartDocker\\MySmartDocker\\MySmartDocker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bin.wan\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
