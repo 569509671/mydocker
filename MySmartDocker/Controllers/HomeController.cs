@@ -20,8 +20,8 @@ namespace MySmartDocker.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.HelloKitty = "MySmartAdviser";
-            ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ViewBag.HelloKitty = "Gelle";
+            ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff");
             return View();
         }
 
