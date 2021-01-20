@@ -20,7 +20,7 @@ namespace MySmartDocker.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Docker = "Docker For .NetCore";
+            ViewBag.Docker = "Docker World";
             ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             return View();
         }
