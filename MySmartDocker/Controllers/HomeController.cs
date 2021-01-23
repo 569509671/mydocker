@@ -21,7 +21,7 @@ namespace MySmartDocker.Controllers
         public IActionResult Index()
         {
             ViewBag.Docker = "Docker World";
-            ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             return View();
         }
 
