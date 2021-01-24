@@ -6,8 +6,8 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["MySmartDocker/MySmartDocker.csproj","MySmartDocker/"]
-COPY ["Common/Common.csproj","Common/"]
+COPY ./**/*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p ./${file%.*}/ && mv $file ./${file%.*}/; done
 RUN dotnet restore "MySmartDocker/MySmartDocker.csproj"
 
 COPY . .
