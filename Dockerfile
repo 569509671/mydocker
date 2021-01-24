@@ -17,10 +17,9 @@ RUN dotnet build "MySmartDocker/MySmartDocker.csproj" -c Release -o /app/build
 
 
 FROM build AS publish
-RUN dotnet publish "Common/Common.csproj" -c Release -o /app/publish
 RUN dotnet publish "MySmartDocker/MySmartDocker.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Common.dll","MySmartDocker.dll"]
+ENTRYPOINT ["dotnet","MySmartDocker.dll"]
