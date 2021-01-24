@@ -8,15 +8,15 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ./**/*.csproj ./
 RUN for file in $(ls *.csproj); do mkdir -p ./${file%.*}/ && mv $file ./${file%.*}/; done
-RUN dotnet restore "MySmartDocker/MySmartDocker.csproj"
+RUN dotnet restore "MySmartDocker.csproj"
 
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "MySmartDocker/MySmartDocker.csproj" -c Release -o /app/build
+RUN dotnet build "MySmartDocker.csproj" -c Release -o /app/build
 
 
 FROM build AS publish
-RUN dotnet publish "MySmartDocker/MySmartDocker.csproj" -c Release -o /app/publish
+RUN dotnet publish "MySmartDocker.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
