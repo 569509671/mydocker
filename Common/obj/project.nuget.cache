@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8GDg4enxNbZsFi5/Lz9w9k80ZdIcfVAw/IJu53WAQSpJsepEL6x4ugC3ZtXNTk/hiRwyf6Z4HhGnfa+UZNozgA==",
+  "dgSpecHash": "p6uKtWMLZETXSV+Q0N8cPmpD45J5GBELay4NarVzZmrYtgt4Z704jb93mDOFQDLfSdjuXKEP4SZ7Ll/LP3VkoA==",
   "success": true,
-  "projectFilePath": "D:\\WorkSpace\\MySmartDocker\\MySmartDocker\\MySmartDocker.csproj",
+  "projectFilePath": "D:\\WorkSpace\\MySmartDocker\\Common\\Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bin.wan\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\bin.wan\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\bin.wan\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\bin.wan\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\bin.wan\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",

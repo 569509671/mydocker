@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Redis;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySmartDocker.Models;
 using System;
@@ -20,8 +21,16 @@ namespace MySmartDocker.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Docker = "Hello World";
+            var time = "Latest View Home Index Time Is :" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            RedisHelper.StringSet("time", time);
+            return View();
+        }
+
+        public IActionResult SmartRedis()
+        {
             ViewBag.Docker = "Docker World--Redis集群";
-            ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ViewBag.Times = RedisHelper.StringGet("time");
             return View();
         }
 

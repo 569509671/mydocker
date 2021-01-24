@@ -1,0 +1,9 @@
+D:\WorkSpace\MySmartDocker\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+D:\WorkSpace\MySmartDocker\Common\bin\Debug\netcoreapp3.1\Common.dll
+D:\WorkSpace\MySmartDocker\Common\bin\Debug\netcoreapp3.1\Common.pdb
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.csprojAssemblyReference.cache
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.dll
+D:\WorkSpace\MySmartDocker\Common\obj\Debug\netcoreapp3.1\Common.pdb
