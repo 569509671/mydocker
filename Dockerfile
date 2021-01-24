@@ -7,12 +7,10 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY . .
-#RUN dotnet restore "Common/Common.csproj"
 RUN dotnet restore "MySmartDocker/MySmartDocker.csproj"
 
 COPY . .
 WORKDIR "/src"
-#RUN dotnet build "Common/Common.csproj" -c Release -o /app/build
 RUN dotnet build "MySmartDocker/MySmartDocker.csproj" -c Release -o /app/build
 
 
