@@ -20,7 +20,7 @@ namespace MySmartDocker.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Docker = "Docker World";
+            ViewBag.Docker = "Docker World--Redis集群";
             ViewBag.Times = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             return View();
         }
