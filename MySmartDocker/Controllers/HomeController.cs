@@ -1,13 +1,9 @@
 ﻿using Common.Redis;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using MySmartDocker.Models;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MySmartDocker.Controllers
 {
@@ -26,7 +22,7 @@ namespace MySmartDocker.Controllers
         {
             ViewBag.Docker = "Hello World";
             var time = "Latest View Home Index Time Is :" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            var rdsKey = "Time:" + _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+            var rdsKey = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
             RedisHelper.StringSet(rdsKey, time);
             return View();
         }
@@ -34,7 +30,7 @@ namespace MySmartDocker.Controllers
         public IActionResult SmartRedis()
         {
             ViewBag.Docker = "Docker World--Redis集群";
-            var rdsKey = "Time:" + _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+            var rdsKey = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
             ViewBag.Times = RedisHelper.StringGet(rdsKey);
             return View();
         }
