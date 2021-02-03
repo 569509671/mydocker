@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MySmartDocker.Models;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace MySmartDocker.Controllers
 {
@@ -21,17 +22,26 @@ namespace MySmartDocker.Controllers
         public IActionResult Index()
         {
             ViewBag.Docker = "Hello World";
-            var time = "Latest View Home Index Time Is :" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            var rdsKey = _httpContextAccessor.HttpContext.Request.Headers["X-Real-IP"].ToString();
-            RedisHelper.StringSet(rdsKey, time);
+            //var time = "Latest View Home Index Time Is :" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            //var rdsKey = _httpContextAccessor.HttpContext.Request.Headers["X-Real-IP"].ToString();
+            var ip = _httpContextAccessor.HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = this.Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            }
+            RedisHelper.StringSet(ip, ip);
             return View();
         }
 
         public IActionResult SmartRedis()
         {
             ViewBag.Docker = "Docker World--Redis集群";
-            var rdsKey = _httpContextAccessor.HttpContext.Request.Headers["X-Real-IP"].ToString();
-            ViewBag.Times = RedisHelper.StringGet(rdsKey);
+            var ip = _httpContextAccessor.HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = this.Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            }
+            ViewBag.Times = RedisHelper.StringGet(ip);
             return View();
         }
 
