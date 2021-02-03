@@ -35,10 +35,10 @@ namespace MySmartDocker
                 options.ForwardedHeaders =
                     ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
                 //仅允许受信任的代理和网络转接头。否则，可能会受到 IP 欺骗攻击
-                var ips = Configuration["KnownProxies"].Split(',').ToList();
-                ips.ForEach(o=> {
-                    options.KnownProxies.Add(IPAddress.Parse(o));
-                });
+                //var ips = Configuration["KnownProxies"].Split(',').ToList();
+                //ips.ForEach(o=> {
+                    //options.KnownProxies.Add(IPAddress.Parse(o));
+                //});
                 
             });
         }
